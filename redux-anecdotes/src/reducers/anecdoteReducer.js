@@ -7,8 +7,10 @@ const anecdotesAtStart = [
   'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
 ]
 
+// Generoi satunnaisen id:n anekdootille
 const getId = () => (100000 * Math.random()).toFixed(0)
 
+// Luo anekdoottiobjektin
 const asObject = (anecdote) => {
   return {
     content: anecdote,
@@ -17,6 +19,8 @@ const asObject = (anecdote) => {
   }
 }
 
+// action creater funktio
+// exportataan appiin ja sieltä "clickhandler" kutsuu tätä
 export const voteForAnecdote = (id) => {
   return {
     type: 'VOTE',
@@ -24,6 +28,7 @@ export const voteForAnecdote = (id) => {
   }
 }
 
+// action creater funktio
 export const createAnecdote = (content) => {
   return {
     type: 'NEW_ANECDOTE',
@@ -35,8 +40,10 @@ export const createAnecdote = (content) => {
   }
 }
 
+// Luo alkutilanteen statelle
 const initialState = anecdotesAtStart.map(asObject)
 
+// Logiikka mitä eri actionit tekee
 const reducer = (state = initialState, action) => {
   console.log('state now: ', state)
   console.log('action', action)
