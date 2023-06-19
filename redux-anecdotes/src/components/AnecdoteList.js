@@ -2,14 +2,15 @@ import { useDispatch, useSelector} from 'react-redux'
 import { voteForAnecdote } from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
-  const anecdotes = useSelector(state => state)
+  const anecdotes = useSelector(state => state.anecdotes)
   const dispatch = useDispatch()
   
     // Äänestys tapahtuu useDispatchin kautta
     const vote = (id) => {
       dispatch(voteForAnecdote(id))
     }
-  
+
+ 
   
   return (
     <>
