@@ -40,17 +40,12 @@ export const createAnecdote = (content) => {
 }
 
 // Luo alkutilanteen statelle
-const initialState = {
-  anecdotes: anecdotesAtStart.map(asObject),
-  filter: ''
-}
-
-console.log('initialState', initialState)
+const initialState = anecdotesAtStart.map(asObject)
 
 // Logiikka mitä eri actionit tekee
 const reducer = (state = initialState, action) => {
-  console.log('state now: ', state)
-  console.log('action', action)
+  console.log('anecdoteReducer.js // state now: ', state)
+  console.log('anecdoteReducer.js // action', action)
 
   switch(action.type) {
     case 'NEW_ANECDOTE':

@@ -2,8 +2,15 @@ import { useDispatch, useSelector} from 'react-redux'
 import { voteForAnecdote } from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
+  const dispatch = useDispatch();
+  // const anecdotes = useSelector(state => state.anecdotes.anecdotes)
   const anecdotes = useSelector(state => state.anecdotes)
-  const dispatch = useDispatch()
+
+  // const fuckit = anecdotes.anecdotes.sort()
+  // console.log('fuckit', fuckit)
+
+
+  
   
     // Äänestys tapahtuu useDispatchin kautta
     const vote = (id) => {
