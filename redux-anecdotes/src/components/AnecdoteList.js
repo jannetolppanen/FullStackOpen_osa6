@@ -5,6 +5,7 @@ const AnecdoteList = () => {
   const dispatch = useDispatch();
   // const anecdotes = useSelector(state => state.anecdotes.anecdotes)
   const anecdotes = useSelector(state => state.anecdotes)
+  console.log('AnecdoteList.js // anecdotes: ',anecdotes)
 
   // const fuckit = anecdotes.anecdotes.sort()
   // console.log('fuckit', fuckit)
