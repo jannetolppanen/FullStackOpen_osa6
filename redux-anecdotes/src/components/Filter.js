@@ -4,11 +4,11 @@ import { filterChange } from '../reducers/filterReducer'
 const Filter = () => {
   const dispatch = useDispatch()
   const handleChange = (event) => {
-    filterChange(event.target.value)
+    dispatch(filterChange(event.target.value))
     // input-kentän arvo muuttujassa event.target.value
   }
   const style = {
-    marginBottom: 10
+    marginBottom: 10,
   }
 
   return (
