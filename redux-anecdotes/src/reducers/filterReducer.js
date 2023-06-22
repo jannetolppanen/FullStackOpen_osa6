@@ -1,4 +1,4 @@
-const filterReducer = (state = 'for_test', action) => {
+const filterReducer = (state = '', action) => {
   console.log('filterReducer.js // state now: ', state)
   console.log('filterReducer.js // action', action)
   switch (action.type) {
