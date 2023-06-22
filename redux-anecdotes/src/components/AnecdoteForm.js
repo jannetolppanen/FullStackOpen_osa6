@@ -1,9 +1,8 @@
 import { createAnecdote } from '../reducers/anecdoteReducer'
 import { useDispatch } from 'react-redux'
 
-
-
 const AnecdoteForm = () => {
+  // Päästään käsiksi storeen 
   const dispatch = useDispatch()
 
   // Anekdootin lisäys
@@ -12,8 +11,7 @@ const AnecdoteForm = () => {
     
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
-    dispatch(createAnecdote(content))
-    
+    dispatch(createAnecdote(content))    
   }
 
   return (
