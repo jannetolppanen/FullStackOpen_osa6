@@ -2,7 +2,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { voteForAnecdote } from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
-  // Päästään käsiksi storeen 
+  // Päästään tallentamaan storeen 
   const dispatch = useDispatch()
 
   // Valitaan storesta anekdootit
