@@ -1,15 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { useSelector } from "react-redux"
+
 
 const notificationSlice = createSlice({
   name: 'notification',
-  initialState: 'Initial notification message',
+  initialState: '',
   reducers: {
-    notificationChange(state, action) {
-      const notification = action.payload
-      return notification
+    voteNotification(state, action) {
+      const content = action.payload
+      return `You voted '${content}'`
+    },
+    createNotification(state, action) {
+      const content = action.payload
+      return `You created '${content}'`
+    },
+    clearNotification(state, action) {
+      return ''
     }
   }
 })
 
-export const { notificationChange } = notificationSlice.actions
+export const { voteNotification, clearNotification, createNotification } = notificationSlice.actions
 export default notificationSlice.reducer
