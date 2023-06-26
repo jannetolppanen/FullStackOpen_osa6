@@ -1,7 +1,6 @@
 import { createAnecdote } from '../reducers/anecdoteReducer'
-import { createNotification, clearNotification } from '../reducers/notificationReducer'
 import { useDispatch } from 'react-redux'
-import anecdoteService from '../services/anecdotes'
+import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteForm = () => {
   // Päästään käsiksi storeen 
@@ -13,12 +12,8 @@ const AnecdoteForm = () => {
     
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
-    // const newAnecdote = await anecdoteService.createNew(content)
     dispatch(createAnecdote(content))  
-    dispatch(createNotification(content))
-    setTimeout(() => {
-      dispatch(clearNotification())
-    }, 5000)  
+    dispatch(setNotification(`added '${content}'`, 2)) 
   }
 
   return (

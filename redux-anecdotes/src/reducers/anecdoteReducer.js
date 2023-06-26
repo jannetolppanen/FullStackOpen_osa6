@@ -1,13 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import anecdoteService from '../services/anecdotes'
 
-// Luo anekdoottiobjektin
-const asObject = (anecdote) => {
-  return {
-    content: anecdote,
-    votes: 0,
-  }
-}
 const anecdoteSlice = createSlice({
   name: 'anecdotes',
   initialState: [],

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { async } from 'q'
 
 const baseUrl = 'http://localhost:3001/anecdotes'
 
