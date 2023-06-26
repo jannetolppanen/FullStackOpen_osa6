@@ -1,10 +1,12 @@
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import AnecdoteForm from './components/AnecdoteForm'
 import Notification from './components/Notification'
 import AnecdoteList from './components/AnecdoteList'
-import { getAnecdotes } from './requests'
+import { getAnecdotes, createAnecdote } from './requests'
 
 const App = () => {
+  // const newAnecdoteMutation = useMutation(createAnecdote)
+
   const handleVote = (anecdote) => {
     console.log('vote')
   }
