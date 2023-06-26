@@ -14,9 +14,9 @@ const AnecdoteList = () => {
   const anecdoteFilter = useSelector(state => state.filter)
 
 // Äänestys tapahtuu useDispatchin kautta
-    const vote = (id, content) => {
-      dispatch(voteForAnecdote(id))
-      dispatch(voteNotification(content))
+    const vote = (anecdote) => {
+      dispatch(voteForAnecdote(anecdote))
+      dispatch(voteNotification(anecdote.content))
       setTimeout(() => {
         dispatch(clearNotification())
       }, 5000)
@@ -35,7 +35,7 @@ const AnecdoteList = () => {
           </div>
           <div>
             has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id, anecdote.content)}>vote</button>
+            <button onClick={() => vote(anecdote)}>vote</button>
           </div>
         </div>
       )}
